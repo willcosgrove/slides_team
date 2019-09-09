@@ -1,4 +1,5 @@
 import React, { useMemo } from "react"
+import { css } from "@emotion/core"
 import InstantPreview from "./instant_preview"
 import posed, { PoseGroup } from "react-pose"
 
@@ -24,7 +25,15 @@ const ScreenPreview = function(props) {
 
   return (
     <div
-      css={{ position: "relative", width: 640, height: 360 }}
+      css={css`
+        @media (min-width: 1400px) {
+          width: 640px;
+          height: 360px;
+        }
+        width: 512px;
+        height: 288px;
+        position: relative;
+      `}
       className="bg-gray-800 rounded-lg"
     >
       <PoseGroup>
